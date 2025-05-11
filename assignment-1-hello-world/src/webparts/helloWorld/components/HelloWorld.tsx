@@ -2,10 +2,12 @@ import * as React from 'react';
 import styles from './HelloWorld.module.scss';
 import type { IHelloWorldProps } from './IHelloWorldProps';
 import { escape } from '@microsoft/sp-lodash-subset';
+import { Text } from '@fluentui/react/lib/Text'
 
 export default class HelloWorld extends React.Component<IHelloWorldProps> {
   public render(): React.ReactElement<IHelloWorldProps> {
     const {
+      title,
       description,
       isDarkTheme,
       environmentMessage,
@@ -16,6 +18,11 @@ export default class HelloWorld extends React.Component<IHelloWorldProps> {
     return (
       <section className={`${styles.helloWorld} ${hasTeamsContext ? styles.teams : ''}`}>
         <div className={styles.welcome}>
+          <div className={styles.titleContainer}>
+            <Text variant="xLargePlus" block>
+              {title || "Click the pencil icon to add a title"}
+            </Text>
+          </div>
           <img alt="" src={isDarkTheme ? require('../assets/welcome-dark.png') : require('../assets/welcome-light.png')} className={styles.welcomeImage} />
           <h2>Well done, {escape(userDisplayName)}!</h2>
           <div>{environmentMessage}</div>

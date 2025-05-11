@@ -13,6 +13,7 @@ import HelloWorld from './components/HelloWorld';
 import { IHelloWorldProps } from './components/IHelloWorldProps';
 
 export interface IHelloWorldWebPartProps {
+  title: string;
   description: string;
 }
 
@@ -25,6 +26,7 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
     const element: React.ReactElement<IHelloWorldProps> = React.createElement(
       HelloWorld,
       {
+        title: this.properties.title,
         description: this.properties.description,
         isDarkTheme: this._isDarkTheme,
         environmentMessage: this._environmentMessage,
