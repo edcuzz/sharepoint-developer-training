@@ -8,6 +8,7 @@ export default class HelloWorld extends React.Component<IHelloWorldProps> {
   public render(): React.ReactElement<IHelloWorldProps> {
     const {
       title,
+      subtitle,
       description,
       isDarkTheme,
       environmentMessage,
@@ -21,6 +22,9 @@ export default class HelloWorld extends React.Component<IHelloWorldProps> {
           <div className={styles.titleContainer}>
             <Text variant="xLargePlus" block>
               {title || "Click the pencil icon to add a title"}
+            </Text>
+            <Text variant='large' block>
+              {subtitle || "Click the pencil icon to add a subtitle"}
             </Text>
           </div>
           <img alt="" src={isDarkTheme ? require('../assets/welcome-dark.png') : require('../assets/welcome-light.png')} className={styles.welcomeImage} />

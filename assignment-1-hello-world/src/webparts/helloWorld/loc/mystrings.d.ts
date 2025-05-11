@@ -3,6 +3,7 @@ declare interface IHelloWorldWebPartStrings {
   BasicGroupName: string;
   DescriptionFieldLabel: string;
   TitleFieldLabel: string;
+  SubTitleFieldLabel: string;
   AppLocalEnvironmentSharePoint: string;
   AppLocalEnvironmentTeams: string;
   AppLocalEnvironmentOffice: string;

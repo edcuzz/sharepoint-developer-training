@@ -14,6 +14,7 @@ import { IHelloWorldProps } from './components/IHelloWorldProps';
 
 export interface IHelloWorldWebPartProps {
   title: string;
+  subtitle: string;
   description: string;
 }
 
@@ -27,6 +28,7 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
       HelloWorld,
       {
         title: this.properties.title,
+        subtitle: this.properties.subtitle,
         description: this.properties.description,
         isDarkTheme: this._isDarkTheme,
         environmentMessage: this._environmentMessage,
@@ -115,6 +117,9 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
                 }),
                 PropertyPaneTextField('title', {
                   label: strings.TitleFieldLabel
+                }),
+                PropertyPaneTextField('subtitle', {
+                  label: strings.SubTitleFieldLabel
                 })
               ]
             }
